@@ -8,18 +8,18 @@
 
 ## 快速开始
 
-在该提交发布到 PyPI 之前，需要安装 [model-compose](https://github.com/hanyeol/model-compose) 的 `8ca862038ce3069e2cc7b9e44231b2a08f158ea5` 提交。
+需要 [model-compose](https://github.com/hanyeol/model-compose) 0.4.124 或更高版本。
 
 使用 [uv](https://docs.astral.sh/uv/) 安装：
 
 ```bash
-uv pip install "model-compose @ git+https://github.com/hanyeol/model-compose@8ca862038ce3069e2cc7b9e44231b2a08f158ea5"
+uv pip install model-compose
 ```
 
 或使用 pip 安装：
 
 ```bash
-pip install "model-compose @ git+https://github.com/hanyeol/model-compose@8ca862038ce3069e2cc7b9e44231b2a08f158ea5"
+pip install model-compose
 ```
 
 克隆此仓库：

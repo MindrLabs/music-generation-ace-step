@@ -8,18 +8,18 @@
 
 ## 빠른 시작
 
-그 커밋이 PyPI에 올라오기 전까지는 [model-compose](https://github.com/hanyeol/model-compose)의 `8ca862038ce3069e2cc7b9e44231b2a08f158ea5` 커밋으로 설치해야 합니다.
+[model-compose](https://github.com/hanyeol/model-compose) 0.4.124 이상이 필요합니다.
 
 [uv](https://docs.astral.sh/uv/)로 설치:
 
 ```bash
-uv pip install "model-compose @ git+https://github.com/hanyeol/model-compose@8ca862038ce3069e2cc7b9e44231b2a08f158ea5"
+uv pip install model-compose
 ```
 
 또는 pip로 설치:
 
 ```bash
-pip install "model-compose @ git+https://github.com/hanyeol/model-compose@8ca862038ce3069e2cc7b9e44231b2a08f158ea5"
+pip install model-compose
 ```
 
 이 저장소 클론:

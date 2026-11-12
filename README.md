@@ -8,18 +8,18 @@ This service takes a style prompt and lyrics and returns a song with vocals and 
 
 ## Quick Start
 
-It needs [model-compose](https://github.com/hanyeol/model-compose) built from commit `8ca862038ce3069e2cc7b9e44231b2a08f158ea5` until that commit is published on PyPI.
+It needs [model-compose](https://github.com/hanyeol/model-compose) 0.4.124 or later.
 
 Install with [uv](https://docs.astral.sh/uv/):
 
 ```bash
-uv pip install "model-compose @ git+https://github.com/hanyeol/model-compose@8ca862038ce3069e2cc7b9e44231b2a08f158ea5"
+uv pip install model-compose
 ```
 
 Or with pip:
 
 ```bash
-pip install "model-compose @ git+https://github.com/hanyeol/model-compose@8ca862038ce3069e2cc7b9e44231b2a08f158ea5"
+pip install model-compose
 ```
 
 Clone this repository:
