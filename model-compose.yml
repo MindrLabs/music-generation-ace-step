@@ -1,0 +1,92 @@
+controller:
+  adapter:
+    type: http-server
+    port: ${env.PORT | 8080}
+    base_path: /api
+  webui:
+    driver: gradio
+    port: ${env.SERVER_PORT | 8081}
+
+workflows:
+  - id: generate
+    default: true
+    title: Song from Lyrics
+    description: Plans a song with a 1.7B language model from a style prompt and lyrics, then renders it with vocals and accompaniment
+    job:
+      component: ace-step
+      action: generate
+      input: ${input}
+      output: ${output}
+
+    output: ${jobs.__job__.output}
+
+  - id: cover
+    title: Cover a Song
+    description: Sings an existing recording again in a new style, optionally with new lyrics
+    job:
+      component: ace-step
+      action: cover
+      input: ${input}
+      output: ${output}
+
+    output: ${jobs.__job__.output}
+
+  - id: repaint
+    title: Repaint a Section
+    description: Regenerates only the chosen span of a recording and keeps the rest as it was
+    job:
+      component: ace-step
+      action: repaint
+      input: ${input}
+      output: ${output}
+
+    output: ${jobs.__job__.output}
+
+components:
+  - id: ace-step
+    type: model
+    task: music-generation
+    driver: custom
+    family: ace-step
+    model:
+      provider: local
+      path: ${env.ACE_STEP_MODEL_DIRECTORY | .}
+    preset: acestep-v15-turbo
+    thinking_model: acestep-5Hz-lm-1.7B
+    device: ${env.DEVICE | cuda}
+    max_concurrent_count: 1
+    runtime:
+      type: virtualenv
+      path: .venv/ace-step
+    actions:
+      - id: generate
+        method: generate
+        prompt: ${input.style as text}
+        lyrics: ${input.lyrics as text}
+        seed: ${input.seed as integer | 0}
+        params:
+          duration: ${input.duration as integer | 180}
+          inference_steps: 8
+        output: ${result as audio/wav}
+
+      - id: cover
+        method: cover
+        source: ${input.source as audio}
+        prompt: ${input.style as text}
+        lyrics: ${input.lyrics as text}
+        seed: ${input.seed as integer | 0}
+        params:
+          inference_steps: 8
+        output: ${result as audio/wav}
+
+      - id: repaint
+        method: rewrite
+        source: ${input.source as audio}
+        start_time: ${input.start_time as number}
+        end_time: ${input.end_time as number}
+        prompt: ${input.style as text}
+        lyrics: ${input.lyrics as text}
+        seed: ${input.seed as integer | 0}
+        params:
+          inference_steps: 8
+        output: ${result as audio/wav}
