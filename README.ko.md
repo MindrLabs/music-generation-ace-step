@@ -78,6 +78,15 @@ MacBook M1 16GB, DGX Spark, RTX 4090 기기에서 측정했습니다. RTF는 처
 | DGX Spark | 0.079 | 14.2 | 17721 (VRAM) | 0.45 | 3.52 | 9.58 | 0.469 | 95.6 | 3.14 |
 | RTX 4090 | 0.028 | 4.97 | 16428 (VRAM) | 0.468 | 4.88 | 9.91 | 0.497 | 90.4 | 4.79 |
 
+| 지표 | 뜻 | 좋은 쪽 |
+| :---: | --- | --- |
+| inner_silence_ratio | 첫 소리와 마지막 소리 사이 무음 비율 | 중립 |
+| leading_silence_sec | 첫 소리 앞 무음 시간(초) | 중립 |
+| longest_gap_sec | 첫 소리와 마지막 소리 사이 가장 긴 무음 시간(초) | 낮을수록 |
+| silence_ratio | 전체 오디오 중 무음 비율 | 중립 |
+| speech_sec | 무음 기준보다 큰 소리가 난 시간(초) | 중립 |
+| trailing_silence_sec | 마지막 소리 뒤 무음 시간(초) | 중립 |
+
 [![기존 곡 커버](docs/images/cover.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#cover-v2.nvidia-rtx-4090-24gb)
 
 - blue-moon-dream, Ace-Step1.5, RTX 4090, seed=0: [lyrics](docs/inputs/cover-v2/blue-moon-dream/lyrics.txt) · [source.wav](docs/inputs/cover-v2/blue-moon-dream/source.wav) · [출력](docs/samples/cover-v2.nvidia-rtx-4090-24gb.c00.blue-moon-dream.r1.wav)
@@ -102,6 +111,15 @@ MacBook M1 16GB, DGX Spark, RTX 4090 기기에서 측정했습니다. RTF는 처
 | MacBook M1 16GB | 1 | 181 | 29927 (footprint) | 0.561 | 5.96 | 13.2 | 0.588 | 74.2 | 4.78 |
 | DGX Spark | 0.076 | 13.8 | 17669 (VRAM) | 0.569 | 6.04 | 15.3 | 0.596 | 72.8 | 4.89 |
 | RTX 4090 | 0.028 | 5.12 | 16378 (VRAM) | 0.551 | 6.04 | 13.2 | 0.577 | 76.1 | 4.41 |
+
+| 지표 | 뜻 | 좋은 쪽 |
+| :---: | --- | --- |
+| inner_silence_ratio | 첫 소리와 마지막 소리 사이 무음 비율 | 중립 |
+| leading_silence_sec | 첫 소리 앞 무음 시간(초) | 중립 |
+| longest_gap_sec | 첫 소리와 마지막 소리 사이 가장 긴 무음 시간(초) | 낮을수록 |
+| silence_ratio | 전체 오디오 중 무음 비율 | 중립 |
+| speech_sec | 무음 기준보다 큰 소리가 난 시간(초) | 중립 |
+| trailing_silence_sec | 마지막 소리 뒤 무음 시간(초) | 중립 |
 
 [![구간 다시 만들기](docs/images/repaint.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#repaint-v2.nvidia-rtx-4090-24gb)
 
@@ -128,6 +146,24 @@ MacBook M1 16GB, DGX Spark, RTX 4090 기기에서 측정했습니다. RTF는 처
 | MacBook M1 16GB | 1.02 | 184 | 28900 (footprint) | 7.66 | 7.94 | 6.32 | 8.3 | 0.387 | 1.97 | 7.15 | 0.414 | 4.21 | 4.35 | 4.35 | 4.23 | 4.18 | 106 | 6.6 |
 | DGX Spark | 0.045 | 8.12 | 16319 (VRAM) | 7.63 | 7.91 | 6.41 | 8.27 | 0.34 | 3.4 | 8.29 | 0.367 | 4.22 | 4.4 | 4.4 | 4.25 | 4.21 | 114 | 3.77 |
 | RTX 4090 | 0.02 | 3.64 | 12306 (VRAM) | 7.64 | 7.87 | 6.38 | 8.26 | 0.438 | 4.61 | 8.74 | 0.472 | 4.2 | 4.34 | 4.37 | 4.24 | 4.16 | 95 | 7.24 |
+
+| 지표 | 뜻 | 좋은 쪽 |
+| :---: | --- | --- |
+| aes_ce | Audiobox Aesthetics 콘텐츠 즐거움, 대략 1~10 | 높을수록 |
+| aes_cu | Audiobox Aesthetics 콘텐츠 쓸모, 대략 1~10 | 높을수록 |
+| aes_pc | Audiobox Aesthetics 제작 복잡도, 대략 1~10 | 중립 |
+| aes_pq | Audiobox Aesthetics 제작 품질, 대략 1~10 | 높을수록 |
+| inner_silence_ratio | 첫 소리와 마지막 소리 사이 무음 비율 | 중립 |
+| leading_silence_sec | 첫 소리 앞 무음 시간(초) | 중립 |
+| longest_gap_sec | 첫 소리와 마지막 소리 사이 가장 긴 무음 시간(초) | 낮을수록 |
+| silence_ratio | 전체 오디오 중 무음 비율 | 중립 |
+| songeval_clarity | SongEval 곡 구조의 명확성, 1~5 | 높을수록 |
+| songeval_coherence | SongEval 전체 일관성, 1~5 | 높을수록 |
+| songeval_memorability | SongEval 기억에 남는 정도, 1~5 | 높을수록 |
+| songeval_musicality | SongEval 전체 음악성, 1~5 | 높을수록 |
+| songeval_naturalness | SongEval 보컬 호흡과 프레이징이 자연스러운 정도, 1~5 | 높을수록 |
+| speech_sec | 무음 기준보다 큰 소리가 난 시간(초) | 중립 |
+| trailing_silence_sec | 마지막 소리 뒤 무음 시간(초) | 중립 |
 
 [![가사로 노래 만들기](docs/images/song-from-lyrics.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#generate-v2.nvidia-rtx-4090-24gb)
 

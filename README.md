@@ -78,6 +78,15 @@ We measured on MacBook M1 16GB, DGX Spark, RTX 4090. RTF is the processing time 
 | DGX Spark | 0.079 | 14.2 | 17721 (VRAM) | 0.45 | 3.52 | 9.58 | 0.469 | 95.6 | 3.14 |
 | RTX 4090 | 0.028 | 4.97 | 16428 (VRAM) | 0.468 | 4.88 | 9.91 | 0.497 | 90.4 | 4.79 |
 
+| Metric | Meaning | Better |
+| :---: | --- | --- |
+| inner_silence_ratio | Share of the audio between the first and last sound that is silent | Neither |
+| leading_silence_sec | Seconds of silence before the first sound | Neither |
+| longest_gap_sec | Longest silent stretch between the first and last sound, in seconds | Lower |
+| silence_ratio | Share of the whole audio that is silent | Neither |
+| speech_sec | Seconds of audio above the silence threshold | Neither |
+| trailing_silence_sec | Seconds of silence after the last sound | Neither |
+
 [![Cover a Song](docs/images/cover.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#cover-v2.nvidia-rtx-4090-24gb)
 
 - blue-moon-dream, Ace-Step1.5, RTX 4090, seed=0: [lyrics](docs/inputs/cover-v2/blue-moon-dream/lyrics.txt) · [source.wav](docs/inputs/cover-v2/blue-moon-dream/source.wav) · [output](docs/samples/cover-v2.nvidia-rtx-4090-24gb.c00.blue-moon-dream.r1.wav)
@@ -102,6 +111,15 @@ We measured on MacBook M1 16GB, DGX Spark, RTX 4090. RTF is the processing time 
 | MacBook M1 16GB | 1 | 181 | 29927 (footprint) | 0.561 | 5.96 | 13.2 | 0.588 | 74.2 | 4.78 |
 | DGX Spark | 0.076 | 13.8 | 17669 (VRAM) | 0.569 | 6.04 | 15.3 | 0.596 | 72.8 | 4.89 |
 | RTX 4090 | 0.028 | 5.12 | 16378 (VRAM) | 0.551 | 6.04 | 13.2 | 0.577 | 76.1 | 4.41 |
+
+| Metric | Meaning | Better |
+| :---: | --- | --- |
+| inner_silence_ratio | Share of the audio between the first and last sound that is silent | Neither |
+| leading_silence_sec | Seconds of silence before the first sound | Neither |
+| longest_gap_sec | Longest silent stretch between the first and last sound, in seconds | Lower |
+| silence_ratio | Share of the whole audio that is silent | Neither |
+| speech_sec | Seconds of audio above the silence threshold | Neither |
+| trailing_silence_sec | Seconds of silence after the last sound | Neither |
 
 [![Repaint a Section](docs/images/repaint.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#repaint-v2.nvidia-rtx-4090-24gb)
 
@@ -128,6 +146,24 @@ We measured on MacBook M1 16GB, DGX Spark, RTX 4090. RTF is the processing time 
 | MacBook M1 16GB | 1.02 | 184 | 28900 (footprint) | 7.66 | 7.94 | 6.32 | 8.3 | 0.387 | 1.97 | 7.15 | 0.414 | 4.21 | 4.35 | 4.35 | 4.23 | 4.18 | 106 | 6.6 |
 | DGX Spark | 0.045 | 8.12 | 16319 (VRAM) | 7.63 | 7.91 | 6.41 | 8.27 | 0.34 | 3.4 | 8.29 | 0.367 | 4.22 | 4.4 | 4.4 | 4.25 | 4.21 | 114 | 3.77 |
 | RTX 4090 | 0.02 | 3.64 | 12306 (VRAM) | 7.64 | 7.87 | 6.38 | 8.26 | 0.438 | 4.61 | 8.74 | 0.472 | 4.2 | 4.34 | 4.37 | 4.24 | 4.16 | 95 | 7.24 |
+
+| Metric | Meaning | Better |
+| :---: | --- | --- |
+| aes_ce | Audiobox Aesthetics content enjoyment, about 1 to 10 | Higher |
+| aes_cu | Audiobox Aesthetics content usefulness, about 1 to 10 | Higher |
+| aes_pc | Audiobox Aesthetics production complexity, about 1 to 10 | Neither |
+| aes_pq | Audiobox Aesthetics production quality, about 1 to 10 | Higher |
+| inner_silence_ratio | Share of the audio between the first and last sound that is silent | Neither |
+| leading_silence_sec | Seconds of silence before the first sound | Neither |
+| longest_gap_sec | Longest silent stretch between the first and last sound, in seconds | Lower |
+| silence_ratio | Share of the whole audio that is silent | Neither |
+| songeval_clarity | SongEval clarity of song structure, 1 to 5 | Higher |
+| songeval_coherence | SongEval overall coherence, 1 to 5 | Higher |
+| songeval_memorability | SongEval memorability, 1 to 5 | Higher |
+| songeval_musicality | SongEval overall musicality, 1 to 5 | Higher |
+| songeval_naturalness | SongEval naturalness of vocal breathing and phrasing, 1 to 5 | Higher |
+| speech_sec | Seconds of audio above the silence threshold | Neither |
+| trailing_silence_sec | Seconds of silence after the last sound | Neither |
 
 [![Song from Lyrics](docs/images/song-from-lyrics.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#generate-v2.nvidia-rtx-4090-24gb)
 

@@ -78,6 +78,15 @@ RTX 4090 生成一首歌的中位耗时为 3.64 秒。
 | DGX Spark | 0.079 | 14.2 | 17721 (VRAM) | 0.45 | 3.52 | 9.58 | 0.469 | 95.6 | 3.14 |
 | RTX 4090 | 0.028 | 4.97 | 16428 (VRAM) | 0.468 | 4.88 | 9.91 | 0.497 | 90.4 | 4.79 |
 
+| 指标 | 含义 | 更好的方向 |
+| :---: | --- | --- |
+| inner_silence_ratio | 第一个与最后一个声音之间静音所占比例 | 无 |
+| leading_silence_sec | 第一个声音之前的静音秒数 | 无 |
+| longest_gap_sec | 第一个与最后一个声音之间最长的静音秒数 | 越低 |
+| silence_ratio | 整段音频中静音所占比例 | 无 |
+| speech_sec | 高于静音阈值的音频秒数 | 无 |
+| trailing_silence_sec | 最后一个声音之后的静音秒数 | 无 |
+
 [![翻唱歌曲](docs/images/cover.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#cover-v2.nvidia-rtx-4090-24gb)
 
 - blue-moon-dream, Ace-Step1.5, RTX 4090, seed=0: [lyrics](docs/inputs/cover-v2/blue-moon-dream/lyrics.txt) · [source.wav](docs/inputs/cover-v2/blue-moon-dream/source.wav) · [输出](docs/samples/cover-v2.nvidia-rtx-4090-24gb.c00.blue-moon-dream.r1.wav)
@@ -102,6 +111,15 @@ RTX 4090 生成一首歌的中位耗时为 3.64 秒。
 | MacBook M1 16GB | 1 | 181 | 29927 (footprint) | 0.561 | 5.96 | 13.2 | 0.588 | 74.2 | 4.78 |
 | DGX Spark | 0.076 | 13.8 | 17669 (VRAM) | 0.569 | 6.04 | 15.3 | 0.596 | 72.8 | 4.89 |
 | RTX 4090 | 0.028 | 5.12 | 16378 (VRAM) | 0.551 | 6.04 | 13.2 | 0.577 | 76.1 | 4.41 |
+
+| 指标 | 含义 | 更好的方向 |
+| :---: | --- | --- |
+| inner_silence_ratio | 第一个与最后一个声音之间静音所占比例 | 无 |
+| leading_silence_sec | 第一个声音之前的静音秒数 | 无 |
+| longest_gap_sec | 第一个与最后一个声音之间最长的静音秒数 | 越低 |
+| silence_ratio | 整段音频中静音所占比例 | 无 |
+| speech_sec | 高于静音阈值的音频秒数 | 无 |
+| trailing_silence_sec | 最后一个声音之后的静音秒数 | 无 |
 
 [![局部重绘](docs/images/repaint.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#repaint-v2.nvidia-rtx-4090-24gb)
 
@@ -128,6 +146,24 @@ RTX 4090 生成一首歌的中位耗时为 3.64 秒。
 | MacBook M1 16GB | 1.02 | 184 | 28900 (footprint) | 7.66 | 7.94 | 6.32 | 8.3 | 0.387 | 1.97 | 7.15 | 0.414 | 4.21 | 4.35 | 4.35 | 4.23 | 4.18 | 106 | 6.6 |
 | DGX Spark | 0.045 | 8.12 | 16319 (VRAM) | 7.63 | 7.91 | 6.41 | 8.27 | 0.34 | 3.4 | 8.29 | 0.367 | 4.22 | 4.4 | 4.4 | 4.25 | 4.21 | 114 | 3.77 |
 | RTX 4090 | 0.02 | 3.64 | 12306 (VRAM) | 7.64 | 7.87 | 6.38 | 8.26 | 0.438 | 4.61 | 8.74 | 0.472 | 4.2 | 4.34 | 4.37 | 4.24 | 4.16 | 95 | 7.24 |
+
+| 指标 | 含义 | 更好的方向 |
+| :---: | --- | --- |
+| aes_ce | Audiobox Aesthetics 内容享受度，约 1 到 10 | 越高 |
+| aes_cu | Audiobox Aesthetics 内容实用性，约 1 到 10 | 越高 |
+| aes_pc | Audiobox Aesthetics 制作复杂度，约 1 到 10 | 无 |
+| aes_pq | Audiobox Aesthetics 制作质量，约 1 到 10 | 越高 |
+| inner_silence_ratio | 第一个与最后一个声音之间静音所占比例 | 无 |
+| leading_silence_sec | 第一个声音之前的静音秒数 | 无 |
+| longest_gap_sec | 第一个与最后一个声音之间最长的静音秒数 | 越低 |
+| silence_ratio | 整段音频中静音所占比例 | 无 |
+| songeval_clarity | SongEval 歌曲结构清晰度，1 到 5 | 越高 |
+| songeval_coherence | SongEval 整体连贯性，1 到 5 | 越高 |
+| songeval_memorability | SongEval 记忆度，1 到 5 | 越高 |
+| songeval_musicality | SongEval 整体音乐性，1 到 5 | 越高 |
+| songeval_naturalness | SongEval 人声呼吸与乐句的自然度，1 到 5 | 越高 |
+| speech_sec | 高于静音阈值的音频秒数 | 无 |
+| trailing_silence_sec | 最后一个声音之后的静音秒数 | 无 |
 
 [![歌词生成歌曲](docs/images/song-from-lyrics.jpg)](https://mindrlabs.github.io/music-generation-ace-step/samples/#generate-v2.nvidia-rtx-4090-24gb)
 
